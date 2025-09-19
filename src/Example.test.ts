@@ -1,9 +1,19 @@
+/* eslint-disable prettier/prettier */
 import { check } from 'k6';
 import ResponseCodes from './types/ResponseCodes';
 import { get } from './helpers/Http';
 
+
 export const options = {
-  iterations: 1,
+  vus: 3,
+  duration: '1s',
+  // iterations: 1,
+  cloud: {
+    // Project: Default project
+    projectID: 3701667,
+    // Test runs with the same name groups test runs together.
+    name: 'Test (18/06/2024-10:22:01)'
+  }
 };
 
 export default async function () {
